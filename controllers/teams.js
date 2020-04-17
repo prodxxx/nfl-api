@@ -14,10 +14,16 @@ const getTeamById = (request, response) => {
 }
 
 const saveNewTeam = (request, response) => {
-  const { id, location, mascot, abbreviation, conference, division } = request.body
+  let { id, location, mascot, abbreviation, conference, division } = request.body
+  const existingIds = teams.map((teams) => parseInt(teams.id))
+  const sortedIds = existingIds.sort((a, b) => b - a)
+  if (!id) {
+    id = sortedIds[0] + 1
+  }
 
   if (!id || !location || !mascot || !abbreviation || !conference || !division) {
     return response.status(400).send('Required fields are: id, location, mascot, abbreviation, conference, division')
+
   }
 
   const newTeam = { id, location, mascot, abbreviation, conference, division }
