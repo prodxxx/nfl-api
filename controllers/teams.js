@@ -20,7 +20,7 @@ const saveNewTeam = (request, response) => {
   const { location, mascot, abbreviation, conference, division } = request.body
 
   if (!location || !mascot || !abbreviation || !conference || !division) {
-    return response.status(400).send('Required fields are: id, location, mascot, abbreviation, conference, division')
+    return response.status(400).send('Required fields are: location, mascot, abbreviation, conference, division')
   }
 
   const newTeam = { location, mascot, abbreviation, conference, division }
