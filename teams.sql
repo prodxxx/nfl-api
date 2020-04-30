@@ -1,269 +1,109 @@
-CREATE DATABASE nfl;
+CREATE DATABASE disney;
 
-USE nfl;
+USE disney;
 
-CREATE TABLE teams (
-	id INT auto_increment,
-    location VARCHAR(255),
-    mascot VARCHAR(255),
-    abbreviation CHAR(3),
-    conference ENUM('AFC', 'NFC'),
-    division ENUM('north', 'south', 'east', 'west'),
-    PRIMARY KEY(id)
+CREATE TABLE villains (
+    name VARCHAR(255),
+    movie VARCHAR(255),
+    slug VARCHAR(255),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deletedAt DATETIME,
+    PRIMARY KEY(name)
 );
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-1,
-'Buffalo',
-'Bills',
-'BUF',
-'AFC',
-'East');
+INSERT INTO villains(name, movie, slug) VALUES (
+    'Captain Hook',
+  'Peter Pan',
+  'captain-hook');
+  
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Cruella de Vil',
+  'One Hundred and One Dalmatians',
+  'cruella-de-vil');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-2,
-'Miami',
-'Dolphins',
-'MIA',
-'AFC',
-'East');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Gaston',
+  'Beauty and the Beast',
+  'gaston');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-3,
-'New England',
-'Patriots',
-'NE',
-'AFC',
-'East');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Hades',
+  'Hercules',
+  'hades');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-4,
-'New York',
-'Jets',
-'NYJ',
-'AFC',
-'East');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Horned King',
+  'The Black Cauldron',
+  'horned-king');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-5,
-'Baltimore',
-'Ravens',
-'BAL',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Jafar',
+  'Aladdin',
+  'jafar');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-6,
-'Cincinnati',
-'Bengals',
-'CIN',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Lady Tremaine',
+  'Cinderella',
+  'lady-tremaine');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-7,
-'Cleveland',
-'Browns',
-'CLE',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Madame Medusa',
+  'The Rescuers',
+  'madame-medusa');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-8,
-'Pittsburgh',
-'Steelers',
-'PIT',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Madam Mim',
+  'The Sword in the Stone',
+  'madam-mim');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-9,
-'Houston',
-'Texans',
-'HOU',
-'AFC',
-'South');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Maleficent',
+  'Sleeping Beauty',
+  'maleficent');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-10,
-'Indianapolis',
-'Colts',
-'IND',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Prince John',
+  'Robin Hood',
+  'prince-john');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-11,
-'Jacksonville',
-'Jaguars',
-'JAX',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Sir Hiss',
+  'Robin Hood',
+  'sir-hiss');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-12,
-'Tennessee',
-'Titans',
-'TEN',
-'AFC',
-'North');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Queen Grimhilde',
+  'Snow White and the Seven Dwarfs',
+  'queen-grimhilde');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-13,
-'Denver',
-'Broncos',
-'DEN',
-'AFC',
-'West');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Queen of Hearts',
+  'Alice in Wonderland',
+  'queen-of-hearts');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-14,
-'Kansas City',
-'Chiefs',
-'KC',
-'AFC',
-'West');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Scar',
+  'The Lion King',
+  'scar');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-15,
-'Los Angeles',
-'Chargers',
-'LAC',
-'AFC',
-'West');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Shan Yu',
+  'Mulan',
+  'shan-yu');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-16,
-'Oakland',
-'Raiders',
-'OAK',
-'AFC',
-'West');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Shere Khan',
+  'The Jungle Book',
+  'shere-khan');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-17,
-'Dallas',
-'Cowboys',
-'DAL',
-'NFC',
-'East');
+INSERT INTO villains(name, movie, slug) VALUES (
+  'Ursula',
+  'The Little Mermaid',
+  'ursula');
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-18,
-'New York',
-'Giants',
-'NYG',
-'NFC',
-'East');
+SELECT * FROM `disney`.`villains`;
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-19,
-'Philadelphia',
-'Eagles',
-'PHI',
-'NFC',
-'East');
+CREATE USER 'badguy'@'localhost' IDENTIFIED WITH mysql_native_password BY 'P4$$W0RD';
 
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-20,
-'Washington',
-'Redskins',
-'WSH',
-'NFC',
-'East');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-21,
-'Chicago',
-'Bears',
-'CHI',
-'NFC',
-'North');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-22,
-'Detriot',
-'Lions',
-'DET',
-'NFC',
-'North');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-23,
-'Green Bay',
-'Packers',
-'GB',
-'NFC',
-'North');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-24,
-'Minnesota',
-'Vikings',
-'MIN',
-'NFC',
-'North');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-25,
-'Atlanta',
-'Falcons',
-'ATL',
-'NFC',
-'South');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-26,
-'Carolina',
-'Panthers',
-'CAR',
-'NFC',
-'South');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-27,
-'New Orleans',
-'Saints',
-'NO',
-'NFC',
-'South');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-28,
-'Tampa Bay',
-'Buccaneers',
-'TB',
-'NFC',
-'South');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-29,
-'Arizona',
-'Cardinals',
-'ARI',
-'NFC',
-'West');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-30,
-'Los Angeles',
-'Rams',
-'LAR',
-'NFC',
-'West');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-31,
-'San Francisco',
-'49ers',
-'SF',
-'NFC',
-'West');
-
-INSERT INTO teams(id, location, mascot, abbreviation, conference, division) VALUES (
-32,
-'Seattle',
-'Seahawks',
-'SEA',
-'NFC',
-'West');
+GRANT ALL ON disney.* to 'badguy'@'localhost';
